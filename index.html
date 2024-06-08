@@ -1,0 +1,87 @@
+<div id="game-container">
+  <img id="gameboard" src="https://i.imgur.com/dWlbiaX.png" alt="Gameboard">
+  <!-- Existing clickable regions on the map -->
+  <div class="territory" id="nagasaki" style="top: 850px; left: 175px; width: 40px; height: 75px;"></div>
+  <div class="territory" id="shikoku" style="top: 780px; left: 290px; width: 40px; height: 30px;"></div>
+  <div class="territory" id="edo" style="top: 650px; left: 560px; width: 20px; height:20px;"></div>
+  <div class="territory" id="sendai" style="top: 450px; left: 580px; width: 20px; height: 80px;"></div>
+  <div class="territory" id="osaka" style="top: 700px; left: 350px; width: 50px; height: 70px;"></div>
+  <div class="territory" id="hokkaido" style="top: 180px; left: 500px; width: 100px; height: 100px;"></div>
+
+  <!-- New clickable regions with specified dimensions and coordinates -->
+  <div class="territory" id="region1" style="top: 800px; left: 160px; width: 40px; height: 20px; border: 1px solid transparent;"></div>
+  <div class="territory" id="region2" style="top: 160px; left: 620px; width: 70px; height: 60px; border: 1px solid transparent;"></div>
+  <div class="territory" id="region3" style="top: 350px; left: 520px; width: 50px; height: 50px; border: 1px solid transparent;"></div>
+  <div class="territory" id="region4" style="top: 480px; left: 500px; width: 50px; height: 80px; border: 1px solid transparent;"></div>
+  <div class="territory" id="region5" style="top: 580px; left: 540px; width: 50px; height: 50px; border: 1px solid transparent;"></div>
+
+  <!-- Additional clickable regions -->
+  <div class="territory" id="i" style="top: 560px; left: 460px; width: 60px; height: 50px; border: 1px solid transparent;"></div>
+  <div class="territory" id="h" style="top: 650px; left: 460px; width: 40px; height: 50px; border: 1px solid transparent;"></div>
+  <div class="territory" id="g" style="top: 610px; left: 420px; width: 30px; height: 70px; border: 1px solid transparent;"></div>
+  <div class="territory" id="f" style="top: 650px; left: 350px; width: 60px; height: 40px; border: 1px solid transparent;"></div>
+  
+  <!-- New clickable regions to be added -->
+  <div class="territory" id="d" style="top: 680px; left: 290px; width: 40px; height: 50px; border: 1px solid transparent;"></div>
+  <div class="territory" id="c" style="top: 700px; left: 230px; width: 45px; height: 40px; border: 1px solid transparent;"></div>
+  <div class="territory" id="b" style="top: 750px; left: 200px; width: 25px; height: 30px; border: 1px solid transparent;"></div>
+  <div class="territory" id="e" style="top: 780px; left: 260px; width: 20px; height: 30px; border: 1px solid transparent;"></div>
+</div>
+
+<div id="player-stats">
+  <table>
+    <tr>
+      <th></th>
+      <th>Koku</th>
+      <th>Samurai</th>
+      <th>Happiness</th>
+    </tr>
+    <tr>
+      <td style="background-color: rgba(255, 255, 0, 0.5);">Hokkaido</td>
+      <td><input type="number" id="hokkaido-koku" value="0"></td>
+      <td><input type="number" id="hokkaido-samurai" value="0"></td>
+      <td><input type="number" id="hokkaido-happiness" value="0"></td>
+    </tr>
+    <tr>
+      <td style="background-color: rgba(255, 0, 0, 0.5);">Sendai</td>
+      <td><input type="number" id="sendai-koku" value="0"></td>
+      <td><input type="number" id="sendai-samurai" value="0"></td>
+      <td><input type="number" id="sendai-happiness" value="0"></td>
+    </tr>
+    <tr>
+      <td style="background-color: rgba(0, 255, 0, 0.5);">Shikoku</td>
+      <td><input type="number" id="shikoku-koku" value="0"></td>
+      <td><input type="number" id="shikoku-samurai" value="0"></td>
+      <td><input type="number" id="shikoku-happiness" value="0"></td>
+    </tr>
+    <tr>
+      <td style="background-color: rgba(128, 128, 128, 0.5);">Edo</td>
+      <td><input type="number" id="edo-koku" value="0"></td>
+      <td><input type="number" id="edo-samurai" value="0"></td>
+      <td><input type="number" id="edo-happiness" value="0"></td>
+    </tr>
+    <tr>
+      <td style="background-color: rgba(0, 0, 255, 0.5);">Osaka</td>
+      <td><input type="number" id="osaka-koku" value="0"></td>
+      <td><input type="number" id="osaka-samurai" value="0"></td>
+      <td><input type="number" id="osaka-happiness" value="0"></td>
+    </tr>
+    <tr>
+      <td style="background-color: rgba(128, 0, 128, 0.6);">Nagasaki</td>
+      <td><input type="number" id="nagasaki-koku" value="0"></td>
+      <td><input type="number" id="nagasaki-samurai" value="0"></td>
+      <td><input type="number" id="nagasaki-happiness" value="0"></td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <button id="save-game">Save Game</button>
+  <button id="load-game">Load Game</button>
+</div>
+
+<div id="army-icons">
+  <img src="https://www.iconpacks.net/icons/4/free-number-one-icon-13265-thumb.png" id="army1" class="draggable army-icon" alt="1 Army" draggable="true">
+  <img src="https://cdn-icons-png.flaticon.com/512/8068/8068238.png" id="army5" class="draggable army-icon" alt="5 Armies" draggable="true">
+  <img src="https://cdn-icons-png.freepik.com/512/9181/9181215.png" id="army10" class="draggable army-icon" alt="10 Armies" draggable="true">
+</div>
